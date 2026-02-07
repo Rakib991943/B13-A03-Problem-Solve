@@ -1,5 +1,21 @@
 function  analyzeText(str) {
-      console.log(str);   
+    if (typeof str !== "string" || str.trim() === "") {
+        return "Invalid";
+    }
+
+      const words = str.split(" ");
+     let longestWords =words[0]; 
+      for(let word of words){
+        if(  word.length > longestWords.length ){
+            longestWords=word ; 
+        }
+      }   
+      const token = str.split(" ").join("").length;
+      return {
+        longwords: longestWords,
+        token: token
+    };
 };
 
-const result = analyzeText("I am a little honest person")
+
+

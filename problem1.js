@@ -5,9 +5,12 @@ function newPrice(currentPrice , discount ) {
        }else{
         const disCount = currentPrice * discount / 100 ;
         const discountPrice = currentPrice - disCount ;
-        const result =  discountPrice.toFixed(3);
+       const result = parseFloat(discountPrice.toFixed(3));
         return result ; 
     }
 }
 
+
+const rsult = newPrice(1500,20);
+console.log(rsult);
 

@@ -53,10 +53,6 @@ function finalScore(omr) {
     return roundedScore;
 }
 
-const bcsNumber = ["Raj"];
-
-const result = finalScore(bcsNumber)
-console.log(result);
 
 
 // Problem 4 
@@ -87,6 +83,27 @@ return false ;
 
 
 //  Problem 5 
+
+function  analyzeText(str) {
+    if (typeof str !== "string" || str.trim() === "") {
+        return "Invalid";
+    }
+
+      const words = str.split(" ");
+     let longestWords =words[0]; 
+      for(let word of words){
+        if(  word.length > longestWords.length ){
+            longestWords=word ; 
+        }
+      }   
+      const token = str.split(" ").join("").length;
+      return {
+        longwords: longestWords,
+        token: token
+    };
+};
+
+
 
 
 
