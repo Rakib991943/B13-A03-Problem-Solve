@@ -30,3 +30,63 @@ function validOtp(otp) {
 
 // Problem 3 
 
+
+function finalScore(omr) {
+    if (
+        typeof omr !== "object" ||
+        omr === null ||
+        typeof omr.right !== "number" ||
+        typeof omr.wrong !== "number" ||
+        typeof omr.skip !== "number"
+    ) {
+        return "Invalid";
+    }
+    if (omr.right + omr.wrong + omr.skip !== 100) {
+        return "Invalid"
+    }
+
+    const score = (omr.right * 1) - (omr.wrong * 0.5);
+    const roundedScore = Math.round(score);
+
+
+
+    return roundedScore;
+}
+
+const bcsNumber = ["Raj"];
+
+const result = finalScore(bcsNumber)
+console.log(result);
+
+
+// Problem 4 
+
+
+function gonoVote(array) {
+    if (!Array.isArray(array)) {
+        return "Invalid";
+
+    }
+   let countha  = 0 ;
+   let countna= 0;
+    for(let word of array){
+       if(word === "ha"){
+        countha++
+       }else if(word === 'na'){
+         countna ++ ; 
+       }
+    }
+if(countha>countna ){
+    return true ;
+}
+else if(countha === countna){
+    return "equal" ;
+}
+return false ; 
+}
+
+
+//  Problem 5 
+
+
+
